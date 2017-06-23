@@ -21,12 +21,9 @@ namespace Anti_AntiAliasing
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Data d;
-
         public MainWindow()
         {
             InitializeComponent();
-            d = new Data();
         }
 
         private void btnProcessImage_Click(object sender, RoutedEventArgs e)
@@ -40,11 +37,11 @@ namespace Anti_AntiAliasing
                 if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     //Store the file path in the filePath string variable in the Data class
-                    d.FilePath = fbd.SelectedPath;
+                    Data.FilePath = fbd.SelectedPath;
                 }
 
                 //Visual display of the string variable when the button is clicked
-                tBoxFilePath.Text = d.FilePath;
+                tBoxFilePath.Text = Data.FilePath;
             }
         }
     }

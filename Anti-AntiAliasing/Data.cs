@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Anti_AntiAliasing
 {
-    internal class Data
+    public static class Data
     {
-        private string filePath;
-        private bool pathSet;
+        private static string filePath;
+        private static bool pathSet;
 
-        public string FilePath
+        public static string FilePath
         {
             //Return the filePath string
             get
@@ -35,7 +35,7 @@ namespace Anti_AntiAliasing
             }
         }
 
-        public bool PathSet
+        public static bool PathSet
         {
             //Return the value of the pathSet bool
             get
