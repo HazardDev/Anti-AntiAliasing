@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Forms;
 
 namespace Anti_AntiAliasing
 {
@@ -20,9 +21,31 @@ namespace Anti_AntiAliasing
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Data d;
+
         public MainWindow()
         {
             InitializeComponent();
+            d = new Data();
+        }
+
+        private void btnProcessImage_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            {
+                if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    //Store the file path in the filePath string variable in the Data class
+                    d.FilePath = fbd.SelectedPath;
+                }
+
+                //Visual display of the string variable when the button is clicked
+                tBoxFilePath.Text = d.FilePath;
+            }
         }
     }
 }
