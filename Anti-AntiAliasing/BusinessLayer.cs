@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
+using System.Drawing.Imaging;
 
 namespace Anti_AntiAliasing
 {
@@ -35,11 +36,13 @@ namespace Anti_AntiAliasing
                         Resample(b);
                         //What happens are the image is resampled?
                         //I dont know if this is even the correct method to call to even process the image
+                        b.save($"Resampled - {files}", ImageFormat.Png);
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine(e.InnerException);
                     }
+
                 }
             }
         }
