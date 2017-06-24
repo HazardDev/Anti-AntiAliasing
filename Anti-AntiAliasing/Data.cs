@@ -5,7 +5,7 @@ namespace Anti_AntiAliasing
     public static class Data
     {
         private static string filePath;
-        private static List<string> listOfFiles;
+        private static List<string> filePaths;
         private static bool pathSet;
 
         public static string FilePath
@@ -32,22 +32,22 @@ namespace Anti_AntiAliasing
             }
         }
 
-        public static List<string> ListOfFiles
+        public static List<string> FilePaths
         {
             get
             {
-                return listOfFiles;
+                return filePaths;
             }
 
             set
             {
-                if (listOfFiles == null || listOfFiles.Count == 0)
+                if (filePaths == null || filePaths.Count == 0)
                     return;
 
-                if (listOfFiles == value)
+                if (filePaths == value)
                     return;
 
-                listOfFiles = value;
+                filePaths = value;
             }
         }
 
