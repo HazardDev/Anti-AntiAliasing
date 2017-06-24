@@ -34,6 +34,7 @@ namespace Anti_AntiAliasing
                     {
                         Resample(b);
                         //What happens are the image is resampled?
+                        //I dont know if this is even the correct method to call to even process the image
                     }
                     catch (Exception e)
                     {
