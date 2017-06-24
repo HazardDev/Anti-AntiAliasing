@@ -1,8 +1,11 @@
-﻿namespace Anti_AntiAliasing
+﻿using System.Collections.Generic;
+
+namespace Anti_AntiAliasing
 {
     public static class Data
     {
         private static string filePath;
+        private static List<string> listOfFiles;
         private static bool pathSet;
 
         public static string FilePath
@@ -26,6 +29,25 @@
 
                 //Set filePath equal to the value
                 filePath = value;
+            }
+        }
+
+        public static List<string> ListOfFiles
+        {
+            get
+            {
+                return listOfFiles;
+            }
+
+            set
+            {
+                if (listOfFiles == null || listOfFiles.Count == 0)
+                    return;
+
+                if (listOfFiles == value)
+                    return;
+
+                listOfFiles = value;
             }
         }
 

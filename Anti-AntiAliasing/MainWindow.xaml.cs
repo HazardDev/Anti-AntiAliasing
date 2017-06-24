@@ -15,6 +15,8 @@ namespace Anti_AntiAliasing
 
         private void btnProcessImage_Click(object sender, RoutedEventArgs e)
         {
+            BusinessLayer.GetListOfFiles();
+            BusinessLayer.ProcessImages();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

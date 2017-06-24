@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace Anti_AntiAliasing
 {
@@ -8,6 +11,37 @@ namespace Anti_AntiAliasing
     {
         //Not my code
         //Credits to Francois Zard on StackOverFlow
+
+        public static void GetListOfFiles()
+        {
+            try
+            {
+                Data.ListOfFiles.AddRange(Directory.GetDirectories(Data.FilePath));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.InnerException);
+            }
+        }
+
+        public static void ProcessImages()
+        {
+            foreach (var files in Data.ListOfFiles)
+            {
+                using (Bitmap b = (Bitmap)Image.FromFile(files))
+                {
+                    try
+                    {
+                        Resample(b);
+                        //What happens are the image is resampled?
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.InnerException);
+                    }
+                }
+            }
+        }
 
         private static List<Point> GetNeighbors(Bitmap bmp, int x, int y)
         {
